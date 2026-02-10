@@ -44,6 +44,7 @@ SETTINGS
     kafka_num_consumers = 1;
 
 # create materialized view
+DROP VIEW IF EXISTS user_events_mv;
 CREATE MATERIALIZED VIEW user_events_mv
 TO user_events
 AS
@@ -62,7 +63,7 @@ FROM user_events_kafka;
   --bootstrap-server localhost:9092 \
   --topic user_events
 {"user_id": 1, "event": "login", "ts": "2026-02-06 10:01:00"}
-{"user_id": 2, "event": "click", "ts": "2026-02-06 10:02:00"}
+{"user_id": 4, "event": "click", "ts": "2026-02-06 10:02:00"}
 
 # create clickhouse storage table
 CREATE TABLE user_events

@@ -1,0 +1,4 @@
+key,value,required
+user_id:type,number,1
+event:required,true,1
+event:not_empty,true,1

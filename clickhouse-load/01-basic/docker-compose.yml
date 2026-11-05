@@ -15,7 +15,7 @@ services:
       CLICKHOUSE_USER: myuser
       CLICKHOUSE_PASSWORD: mypass
       CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: "1"
-    restart: unless-stopped
+    restart: "on-failure:3"
     #    volumes:
     #      - ./data:/var/lib/clickhouse
     #      - ./logs:/var/log/clickhouse-server

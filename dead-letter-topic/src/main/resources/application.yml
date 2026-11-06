@@ -1,0 +1,10 @@
+spring:
+  kafka:
+    # 환경변수 KAFKA_BOOTSTRAP_SERVERS 가 있으면 그 값을, 없으면 localhost:9092 사용
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    consumer:
+      auto-offset-reset: latest   # 앱 기동 후 들어온 메시지부터 읽음 (처음부터 읽으려면 earliest)
+
+logging:
+  level:
+    org.springframework.kafka: INFO
